@@ -30,6 +30,16 @@
         app:layout_constraintTop_toBottomOf="@+id/titolo_activity" />
 
     <TextView
+        android:id="@+id/fabbisogno_giornaliero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/ricevo_giorni"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ricevo_watt" />
+
+    <TextView
         android:id="@+id/ricevo_giorni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,10 +48,10 @@
         app:layout_constraintBottom_toBottomOf="@+id/ricevo_watt"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totale" />
+        app:layout_constraintTop_toBottomOf="@+id/valore_batteria_mah" />
 
     <TextView
-        android:id="@+id/totale"
+        android:id="@+id/valore_batteria_mah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

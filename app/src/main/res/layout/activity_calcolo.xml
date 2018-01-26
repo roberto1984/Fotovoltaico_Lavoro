@@ -28,6 +28,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titolo_activity" />
 
+    <TextView
+        android:id="@+id/fabbisogno_giornaliero_watt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/inserisco_giorni"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ricevo_watt" />
+
     <EditText
         android:id="@+id/inserisco_giorni"
         android:layout_width="wrap_content"
