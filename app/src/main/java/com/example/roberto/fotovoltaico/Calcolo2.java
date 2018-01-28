@@ -18,12 +18,15 @@ public class Calcolo2 extends AppCompatActivity {
         setContentView(R.layout.activity_calcolo2);
         final String giorni_received_from_calcolo = getIntent().getExtras().getString("giorni");
         final String watt_received_from_main = getIntent().getExtras().getString("watt");
-        final int fabbisogno_giornaliero = Integer.valueOf(watt_received_from_main)*24;
-        final int valore_batteria = (fabbisogno_giornaliero*Integer.valueOf(giorni_received_from_calcolo))/12;
+        final double fabbisogno_giornaliero = Double.parseDouble(watt_received_from_main)*24;
+        final double valore_batteria = (fabbisogno_giornaliero*Double.parseDouble(giorni_received_from_calcolo))/12;
+        final double fattore_conversione_pannello = 1.4;
+        final int minimo_ore_ricarica_pannello_caso_peggiore_dicembre = 4;
+        final double valore_pannello = (fabbisogno_giornaliero/minimo_ore_ricarica_pannello_caso_peggiore_dicembre) *fattore_conversione_pannello;
 
         //setto il titolo dell'activity,l'id è titolo_activity cui definisco il suo layout in activity_calcolo2.xml
         TextView titolo_activity = (TextView)findViewById(R.id.titolo_activity);
-        titolo_activity.setText("Dimensionamento batteria");
+        titolo_activity.setText("Dimensionamento Impianto");
         //setto la textview dove andro a scrivere il dato di watt inserito nella editext della mainactivity e da calcolo
         TextView ricevo_watt = (TextView)findViewById(R.id.ricevo_watt);
         ricevo_watt.setText("Il tuo carico è di "+watt_received_from_main+" watt");
@@ -35,6 +38,8 @@ public class Calcolo2 extends AppCompatActivity {
         ricevo_giorni.setText("Il numero di giorni senza sole è di "+giorni_received_from_calcolo+" giorni");
         TextView valore_batteria_mah = (TextView)findViewById(R.id.valore_batteria_mah);
         valore_batteria_mah.setText("La tua batterià dovrà essere di almeno "+valore_batteria+" mah");
+        TextView valore_pannello_watt = (TextView)findViewById(R.id.valore_pannello_watt);
+        valore_pannello_watt.setText("Il tuo pannello dovrà essere di almeno "+valore_pannello+" watt");
 
 
         /*final EditText etLocation = (EditText) findViewById(R.id.editText);

@@ -18,7 +18,7 @@ public class Calcolo extends AppCompatActivity {
         //setto il layout xml che voglio usare(definito in activity_calcolo)
         setContentView(R.layout.activity_calcolo);
         final String watt_received_from_main = getIntent().getExtras().getString("watt");
-        final int fabbisogno_giornaliero = Integer.valueOf(watt_received_from_main)*24;
+        final double fabbisogno_giornaliero = Double.parseDouble(watt_received_from_main)*24;
         //setto il titolo dell'activity,l'id è titolo_activity cui definisco il suo layout in activity_calcolo.xml
         TextView titolo_activity = (TextView)findViewById(R.id.titolo_activity);
         titolo_activity.setText("Giorni di autonomia senza sole?");
