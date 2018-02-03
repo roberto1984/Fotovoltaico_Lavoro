@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
     tools:context="com.example.roberto.fotovoltaico.MainActivity">
 
 
@@ -12,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:id="@+id/titolo_activity"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:text="ciao"
+        android:textColor="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -40,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Avanti"
+        android:typeface = "sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
