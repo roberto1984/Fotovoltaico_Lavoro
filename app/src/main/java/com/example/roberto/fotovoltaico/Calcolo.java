@@ -22,6 +22,10 @@ public class Calcolo extends AppCompatActivity {
         //setto il titolo dell'activity,l'id è titolo_activity cui definisco il suo layout in activity_calcolo.xml
         TextView titolo_activity = (TextView)findViewById(R.id.titolo_activity);
         titolo_activity.setText("Giorni di autonomia senza sole?");
+        TextView spiegazione_activity = (TextView)findViewById(R.id.spiegazione_activity);
+        spiegazione_activity.setText("Una volta che il consumo in watt del carico è noto occorre dimensionare la batteria." +
+                "La batteria va dimensionata ipotizzando i giorni di autonomia che si vuole avere, in condizioni di totale assenza di sole." +
+                "Una volta nota la batteria, si può dimensionare di conseguenza il pannello fotovoltaico");
         //setto la textvie dove andro a scrivere il dato di watt inserito nella editext della mainactivity
         TextView ricevo_watt = (TextView)findViewById(R.id.ricevo_watt);
         //nella stringa watt_received_from_main inserisco il valore che ho inserito nella editext della mainactivity

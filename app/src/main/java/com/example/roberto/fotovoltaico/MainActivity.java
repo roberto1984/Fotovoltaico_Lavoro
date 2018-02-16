@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
         //posso definire il testo nelle textview anche solo nel layout xml,ma preferisco fare tutto da qui e poi mettere l'id nell'xml del layout,per avere tutto pulito il codice
         TextView titolo_activity = (TextView)findViewById(R.id.titolo_activity);
         titolo_activity.setText("Inserisci il valore del carico in Watt");
+        TextView spiegazione_activity = (TextView)findViewById(R.id.spiegazione_activity);
+        spiegazione_activity.setText("Il carico in watt è il consumo effettivo che il tuo carico assorbira una volta alimentato." +
+                "Le informazioni circa il consumo instantaneo puoi ricavarlo facilmente moltiplicando la tensione di alimentazione per l'assorbimento " +
+                "in corrente riportato sull'alimentatore del dispositivo");
+
         //setto il box per inserire il testo e ne definisco il layout in activity_main.xml con id editText
         final EditText inserisco_watt = (EditText) findViewById(R.id.editText);
 

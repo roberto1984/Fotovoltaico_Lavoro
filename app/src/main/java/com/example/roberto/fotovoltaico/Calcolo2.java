@@ -20,9 +20,19 @@ public class Calcolo2 extends AppCompatActivity {
         final String watt_received_from_main = getIntent().getExtras().getString("watt");
         final double fabbisogno_giornaliero = Double.parseDouble(watt_received_from_main)*24;
         final double valore_batteria = (fabbisogno_giornaliero*Double.parseDouble(giorni_received_from_calcolo))/12;
-        final double fattore_conversione_pannello = 1.4;
+        //Milano
+        //final int minimo_ore_ricarica_pannello_caso_peggiore_dicembre = 2;
+        //Roma
         final int minimo_ore_ricarica_pannello_caso_peggiore_dicembre = 4;
-        final double valore_pannello = (fabbisogno_giornaliero/minimo_ore_ricarica_pannello_caso_peggiore_dicembre) *fattore_conversione_pannello;
+        //Palermo
+        //final int minimo_ore_ricarica_pannello_caso_peggiore_dicembre = 6;
+
+        //Il metodo sotto, mi calcola il valore pannello, ipotizzando di ricaricare il valore_batteria però normalizzato per i giorni_received_from_calcolo,ossia il pannello in 4 ore(se Roma)
+        // mi deve immagazzinare nella batteria tutta l'energia che serve per i giorni_received_from_calcolo successivi
+        final double valore_pannello = (fabbisogno_giornaliero*Double.parseDouble(giorni_received_from_calcolo)/minimo_ore_ricarica_pannello_caso_peggiore_dicembre);
+        //Il metodo sotto, mi calcola il valore pannello, ipotizzando di ricaricare il fabbisogno_giornaliero nelle poche ore del caso peggiore di dicembre
+        //final double fattore_conversione_pannello = 1.4;
+        //final double valore_pannello = (fabbisogno_giornaliero/minimo_ore_ricarica_pannello_caso_peggiore_dicembre) *fattore_conversione_pannello;
 
         //setto il titolo dell'activity,l'id è titolo_activity cui definisco il suo layout in activity_calcolo2.xml
         TextView titolo_activity = (TextView)findViewById(R.id.titolo_activity);
